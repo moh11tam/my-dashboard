@@ -1,42 +1,11 @@
-import { useState } from 'react'
+import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ServicesSection from './components/ServicesSection'
-import LoginModal from './components/LoginModal'
-import RegisterModal from './components/RegisterModal'
-import Dashboard from './components/Dashboard'
 
 function App() {
-  // 1️⃣ حالة تسجيل الدخول وبيانات الزبون
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
-
-  // حالة التحكم بفتح وإغلاق النوافذ المنبثقة (Modals)
-  const [isLoginOpen, setIsLoginOpen] = useState(false)
-  const [isRegisterOpen, setIsRegisterOpen] = useState(false)
-
-  // دالة تُستدعى عند نجاح الدخول أو التسجيل
-  const handleLoginSuccess = () => {
-    setCurrentUser({ name: "أحمد بن علي", email: "ahmed@example.com" });
-    setIsLoggedIn(true);
-    setIsLoginOpen(false);
-    setIsRegisterOpen(false);
-  };
-
-  // دالة تسجيل الخروج للعودة للموقع الرئيسي
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setCurrentUser(null);
-  };
-
-  // 🔴 في حال كان الزبون مسجلاً للدخول، تظهر لوحة التحكم مباشرة
-  if (isLoggedIn) {
-    return <Dashboard user={currentUser} onLogout={handleLogout} />
-  }
-
-  // 🟢 في حال عدم تسجيل الدخول، تظهر الواجهة الرئيسية والخدمات
   return (
-    <div className="hero-container">
+    <div className="hero-container" dir="rtl">
       
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&display=swap');
@@ -56,30 +25,13 @@ function App() {
       `}</style>
 
       {/* 1. شريط التنقل العلوي */}
-      <Navbar 
-        onOpenLogin={() => setIsLoginOpen(true)} 
-        onOpenRegister={() => setIsRegisterOpen(true)} 
-      />
+      <Navbar />
 
       {/* 2. قسم الواجهة الرئيسية (الهيرو) */}
-      <Hero onOpenRegister={() => setIsRegisterOpen(true)} />
+      <Hero />
 
-      {/* 3. قسم الخدمات مع الصورة المدمجة */}
+      {/* 3. قسم الخدمات مع الصور والمحتوى الكامل */}
       <ServicesSection />
-
-      {/* 4. النافذة الخاصة بتسجيل الدخول */}
-      <LoginModal 
-        isOpen={isLoginOpen} 
-        onClose={() => setIsLoginOpen(false)} 
-        onLoginSuccess={handleLoginSuccess}
-      />
-
-      {/* 5. النافذة الخاصة بإنشاء حساب */}
-      <RegisterModal 
-        isOpen={isRegisterOpen} 
-        onClose={() => setIsRegisterOpen(false)} 
-        onRegisterSuccess={handleLoginSuccess}
-      />
 
     </div>
   )

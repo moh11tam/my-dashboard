@@ -1,8 +1,9 @@
 import React from 'react'
+import { FaWhatsapp } from 'react-icons/fa'
 
-function Hero({ onOpenRegister }) {
+function Hero() {
   return (
-    <div className="hero-content-wrapper">
+    <div className="hero-content-wrapper" dir="rtl">
       <style>{`
         .hero-content {
           text-align: center;
@@ -48,8 +49,8 @@ function Hero({ onOpenRegister }) {
         }
 
         .cta-btn {
-          background-color: #ffffff;
-          color: #000000;
+          background-color: #25D366;
+          color: #ffffff;
           border: none;
           padding: 14px 32px;
           border-radius: 10px;
@@ -60,12 +61,15 @@ function Hero({ onOpenRegister }) {
           display: inline-flex;
           align-items: center;
           gap: 10px;
+          text-decoration: none;
           font-family: inherit;
+          box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
         .cta-btn:hover {
+          background-color: #20ba5a;
           transform: translateY(-3px);
-          box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+          box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
         }
 
         .glow-bottom {
@@ -82,12 +86,13 @@ function Hero({ onOpenRegister }) {
         @media (max-width: 768px) {
           .main-heading { font-size: 38px; }
           .sub-description { font-size: 15px; }
+          .cta-btn { width: 100%; justify-content: center; }
         }
       `}</style>
 
       {/* 2. الواجهة الرئيسية */}
       <div className="hero-content">
-        <div className="badge-capsule">✨ افتح متجرك في ثوانٍ ⚡</div>
+        <div className="badge-capsule">✨ ابدأ مشروعك الرقمي الآن ⚡</div>
         <h1 className="main-heading">
           منصتك الموثوقة الشاملة
           <br />
@@ -98,9 +103,15 @@ function Hero({ onOpenRegister }) {
           <br />
           طور ، تتبع ، و تحكم في متجرك كله في مكان واحد .
         </p>
-        <button className="cta-btn" onClick={onOpenRegister}>
-          تحصل على متجرك المجاني مدى الحياة ⬅
-        </button>
+        <a 
+          href="https://wa.me/213663575873" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="cta-btn"
+        >
+          <FaWhatsapp size={22} />
+          <span>تواصل معنا لبدء متجرك الآن ⬅</span>
+        </a>
       </div>
 
       <div className="glow-bottom"></div>
