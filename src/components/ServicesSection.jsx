@@ -13,7 +13,7 @@ function ServicesSection() {
     { icon: <FaLaptopCode size={22} />, title: "تصميم مواقع" },
     { icon: <FaShoppingCart size={22} />, title: "متاجر إلكترونية" },
     { icon: <FaRocket size={22} />, title: "صفحات هبوط" },
-    { icon: <FaBuilding size={22} />, title: "مواقع شركات" },
+    { icon: <FaBuilding size={22} />, title: "م مواقع شركات" },
     { icon: <FaMobileAlt size={22} />, title: "تصميم متجاوب" },
     { icon: <FaTachometerAlt size={22} />, title: "سرعة فائقة" },
     { icon: <FaSearch size={22} />, title: "تهيئة SEO" },
@@ -30,10 +30,11 @@ function ServicesSection() {
     "لوحة تحكم باللغة العربية سهلة الاستخدام"
   ]
 
+  // 🟢 تم استبدال الأرقام بعبارة طلب عرض مخصص
   const pricingPlans = [
-    { title: "الموقع التعريفي", price: "25,000 د.ج", desc: "مثالي للشركات والمؤسسات والعيادات لعرض خدماتها.", popular: false },
-    { title: "المتجر الإلكتروني", price: "45,000 د.ج", desc: "متجر متكامل لبيع المنتجات مع طرق الدفع والتوصيل.", popular: true },
-    { title: "صفحة هبوط (Landing Page)", price: "18,000 د.ج", desc: "صفحة مخصصة لزيادة المبيعات والتحويل السريع.", popular: false },
+    { title: "الموقع التعريفي", price: "✨ اطلب عرضًا مخصصًا لمشروعك", desc: "مثالي للشركات والمؤسسات والعيادات لعرض خدماتها.", popular: false },
+    { title: "المتجر الإلكتروني", price: "✨ اطلب عرضًا مخصصًا لمشروعك", desc: "متجر متكامل لبيع المنتجات مع طرق الدفع والتوصيل.", popular: true },
+    { title: "صفحة هبوط (Landing Page)", price: "✨ اطلب عرضًا مخصصًا لمشروعك", desc: "صفحة مخصصة لزيادة المبيعات والتحويل السريع.", popular: false },
   ]
 
   const scrollToContact = () => {
@@ -44,7 +45,6 @@ function ServicesSection() {
   return (
     <section className="about-services-section" dir="rtl">
       <style>{`
-        /* 🟢 استدعاء خط Cairo بأوزان متعددة */
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
 
         .about-services-section { 
@@ -97,7 +97,6 @@ function ServicesSection() {
           padding: 35px 30px; border-radius: 20px;
         }
 
-        /* 🟢 إصلاح تنسيق وحجم الخط الخاص بالعنوان المذكور */
         .second-title {
           font-family: 'Cairo', sans-serif !important;
           font-size: 32px !important; 
@@ -120,7 +119,6 @@ function ServicesSection() {
         }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6); }
 
-        /* الدوائر المتحركة */
         .services-ticker-container { margin: 30px 0 60px 0; overflow: hidden; position: relative; padding: 20px 0; }
         .services-ticker-container::before, .services-ticker-container::after {
           content: ""; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2; pointer-events: none;
@@ -139,7 +137,6 @@ function ServicesSection() {
         }
         .circle-service-item:hover { background: rgba(168, 85, 247, 0.15); border-color: #c084fc; transform: scale(1.08); }
 
-        /* المميزات والأسعار واتصل بنا */
         .features-section { background: rgba(255, 255, 255, 0.015); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 24px; padding: 50px 30px; margin: 60px 0; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
         .feature-item { display: flex; align-items: center; gap: 15px; background: rgba(255, 255, 255, 0.03); padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.05); }
@@ -149,6 +146,16 @@ function ServicesSection() {
         .pricing-card { background: #121216; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 35px 25px; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
         .pricing-card.popular { border-color: #a855f7; background: linear-gradient(180deg, rgba(168, 85, 247, 0.08) 0%, #121216 100%); transform: translateY(-8px); }
 
+        /* 🟣 تنسيق الخط الجديد ليظهر بوضوح وبحجم مثالي */
+        .custom-quote-text {
+          font-size: 20px;
+          font-weight: 800;
+          color: #c084fc;
+          margin: 20px 0;
+          line-height: 1.5;
+          font-family: 'Cairo', sans-serif !important;
+        }
+
         .contact-section { background: rgba(18, 18, 22, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 50px 30px; margin: 70px auto 40px auto; }
         .contact-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
         .contact-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 18px; padding: 25px; text-align: center; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; transition: all 0.3s; }
@@ -156,7 +163,6 @@ function ServicesSection() {
 
         .site-footer { border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 40px 20px 20px 20px; margin-top: 60px; background: #050507; text-align: center; }
 
-        /* 🌐 استعلامات التجاوب الشاملة للموبايل والتابلت */
         @media (max-width: 1024px) {
           .about-heading { font-size: 30px !important; }
           .second-title { font-size: 26px !important; }
@@ -173,6 +179,7 @@ function ServicesSection() {
           .pricing-grid, .features-grid, .contact-cards-grid { grid-template-columns: 1fr !important; gap: 15px !important; }
           .second-description-box, .features-section, .contact-section { padding: 25px 15px !important; margin: 35px 0 !important; }
           .cta-button { width: 100% !important; padding: 12px 20px !important; }
+          .custom-quote-text { font-size: 18px !important; }
         }
       `}</style>
 
@@ -199,7 +206,6 @@ function ServicesSection() {
 
         {/* وصف ودعوة لاتخاذ إجراء */}
         <div className="second-description-box">
-          {/* 🟢 العنوان المصحح إملائياً وبدون تشكيل يسبب تداخل الخط */}
           <h3 className="second-title">خطوة واحدة... قد تغير مستقبل تجارتك 🚀</h3>
           <p className="about-paragraph">موقع ويب احترافي يجعل تجارتك أقرب إلى عملائك من أي وقت مضى.</p>
           <button className="cta-button" onClick={scrollToContact}>تواصل معنا الآن للبدء 🚀</button>
@@ -238,17 +244,22 @@ function ServicesSection() {
           </div>
         </div>
 
-        {/* 🟢 3. قسم الأسعار */}
+        {/* 🟢 3. قسم الأسعار والعروض المخصصة */}
         <div id="pricing" className="pricing-section">
           <span className="about-badge">باقات واضحة</span>
-          <h3 style={{ fontSize: '28px', fontWeight: '800', fontFamily: 'Cairo, sans-serif' }}>أسعار <span style={{ color: '#c084fc' }}>تنافسية تناسب مشروعك</span></h3>
+          <h3 style={{ fontSize: '28px', fontWeight: '800', fontFamily: 'Cairo, sans-serif' }}>خطط <span style={{ color: '#c084fc' }}>تناسب مشروعك</span></h3>
 
           <div className="pricing-grid">
             {pricingPlans.map((plan, idx) => (
               <div className={`pricing-card ${plan.popular ? 'popular' : ''}`} key={idx}>
                 <div>
                   <h4 style={{ fontSize: '20px', fontWeight: 'bold', fontFamily: 'Cairo, sans-serif' }}>{plan.title}</h4>
-                  <div style={{ fontSize: '32px', fontWeight: '900', color: '#c084fc', margin: '15px 0', fontFamily: 'Cairo, sans-serif' }}>{plan.price}</div>
+                  
+                  {/* العبارة المخصصة البديلة للسعر */}
+                  <div className="custom-quote-text">
+                    {plan.price}
+                  </div>
+
                   <p style={{ color: '#9ca3af', fontSize: '14px', fontFamily: 'Cairo, sans-serif' }}>{plan.desc}</p>
                 </div>
                 <button className="cta-button" style={{ width: '100%', marginTop: '20px' }} onClick={scrollToContact}>اطلب الآن</button>
@@ -288,7 +299,6 @@ function ServicesSection() {
 
       </div>
 
-      {/* التذييل */}
       <footer className="site-footer">
         <div style={{ fontSize: '20px', fontWeight: 'bold', color: '#fff', fontFamily: 'Cairo, sans-serif' }}>تطوير المواقع الاحترافية</div>
         <div style={{ marginTop: '20px', color: '#6b7280', fontSize: '13px', fontFamily: 'Cairo, sans-serif' }}>
