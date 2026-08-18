@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaWhatsapp } from 'react-icons/fa'
 
 function Hero() {
   return (
@@ -8,10 +7,11 @@ function Hero() {
         .hero-content {
           text-align: center;
           max-width: 900px;
-          margin: 60px auto 40px auto;
-          padding: 0 20px;
+          margin: 40px auto 30px auto;
+          padding: 0 15px;
           position: relative;
           z-index: 2;
+          box-sizing: border-box;
         }
 
         .badge-capsule {
@@ -24,13 +24,13 @@ function Hero() {
           border-radius: 30px;
           font-size: 14px;
           color: #e5e7eb;
-          margin-bottom: 30px;
+          margin-bottom: 25px;
         }
 
         .main-heading {
-          font-size: 58px;
+          font-size: 52px;
           font-weight: 900;
-          line-height: 1.25;
+          line-height: 1.3;
           margin-bottom: 20px;
         }
 
@@ -41,56 +41,63 @@ function Hero() {
         }
 
         .sub-description {
-          font-size: 18px;
+          font-size: 17px;
           color: #9ca3af;
           max-width: 700px;
-          margin: 0 auto 40px auto;
-          line-height: 1.7;
+          margin: 0 auto 35px auto;
+          line-height: 1.8;
         }
 
-        .cta-btn {
-          background-color: #25D366;
+        /* 🔮 الزر البنفسجي الفاخر بدون أيقونة الواتساب */
+        .cta-btn-hero {
+          background: linear-gradient(135deg, #c084fc 0%, #9333ea 100%);
           color: #ffffff;
-          border: none;
+          border: 1px solid rgba(255, 255, 255, 0.2);
           padding: 14px 32px;
-          border-radius: 10px;
+          border-radius: 14px;
           font-size: 16px;
           font-weight: bold;
           cursor: pointer;
           transition: all 0.3s ease;
           display: inline-flex;
           align-items: center;
-          gap: 10px;
+          justify-content: center;
           text-decoration: none;
           font-family: inherit;
-          box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+          box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+          max-width: 100%;
+          box-sizing: border-box;
         }
 
-        .cta-btn:hover {
-          background-color: #20ba5a;
+        .cta-btn-hero:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+          box-shadow: 0 12px 30px rgba(168, 85, 247, 0.6);
+          background: linear-gradient(135deg, #d8b4fe 0%, #a855f7 100%);
         }
 
         .glow-bottom {
           position: absolute;
-          top: 300px;
+          top: 250px;
           left: 50%;
           transform: translateX(-50%);
-          width: 700px;
-          height: 350px;
-          background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(0,0,0,0) 70%);
+          width: 100%;
+          max-width: 600px;
+          height: 300px;
+          background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, rgba(0,0,0,0) 70%);
           pointer-events: none;
         }
 
         @media (max-width: 768px) {
-          .main-heading { font-size: 38px; }
-          .sub-description { font-size: 15px; }
-          .cta-btn { width: 100%; justify-content: center; }
+          .main-heading { font-size: 32px; }
+          .sub-description { font-size: 14px; }
+          .cta-btn-hero { 
+            width: 100%; 
+            padding: 12px 15px; 
+            font-size: 14px;
+          }
         }
       `}</style>
 
-      {/* 2. الواجهة الرئيسية */}
       <div className="hero-content">
         <div className="badge-capsule">✨ ابدأ مشروعك الرقمي الآن ⚡</div>
         <h1 className="main-heading">
@@ -103,14 +110,14 @@ function Hero() {
           <br />
           طور ، تتبع ، و تحكم في متجرك كله في مكان واحد .
         </p>
+        
         <a 
           href="https://wa.me/213663575873" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="cta-btn"
+          className="cta-btn-hero"
         >
-          <FaWhatsapp size={22} />
-          <span>تواصل معنا لبدء متجرك الآن ⬅</span>
+          <span>اطلب موقعك الاحترافي الآن 🚀</span>
         </a>
       </div>
 

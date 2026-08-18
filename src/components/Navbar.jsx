@@ -7,7 +7,7 @@ function Navbar() {
 
   const scrollTo = (e, id) => {
     e.preventDefault();
-    setMobileMenuOpen(false); // إغلاق القائمة بعد النقر في الهاتف
+    setMobileMenuOpen(false);
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -17,18 +17,21 @@ function Navbar() {
   return (
     <nav className="navbar" dir="rtl">
       <style>{`
+        /* 🟢 تثبيت الشريط العلوي ليتحرك ويهبط مع الصفحة */
         .navbar {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 15px 5%;
+          padding: 12px 5%;
           max-width: 1200px;
           margin: 0 auto;
           position: sticky;
           top: 0;
-          background: rgba(8, 8, 10, 0.95);
-          backdrop-filter: blur(10px);
-          z-index: 1000;
+          background: rgba(8, 8, 10, 0.92);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          z-index: 9999;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .nav-links {
@@ -54,31 +57,32 @@ function Navbar() {
         .nav-actions {
           display: flex;
           align-items: center;
-          gap: 12px;
+          gap: 10px;
         }
 
-        .whatsapp-btn {
+        /* 🟢 زر الواتساب الأخضر الثابت والمتتبع */
+        .whatsapp-btn-nav {
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 6px;
           background-color: #25D366;
           color: #ffffff;
-          padding: 9px 18px;
+          padding: 8px 16px;
           border-radius: 25px;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: bold;
           text-decoration: none;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+          box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+          white-space: nowrap;
         }
 
-        .whatsapp-btn:hover {
+        .whatsapp-btn-nav:hover {
           background-color: #20ba5a;
           transform: translateY(-2px);
-          box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+          box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
         }
 
-        /* زر القائمة للشاشات الصغيرة */
         .mobile-toggle-btn {
           display: none;
           background: none;
@@ -88,7 +92,6 @@ function Navbar() {
           cursor: pointer;
         }
 
-        /* 📱 التجاوب مع الهواتف والأجهزة اللوحية */
         @media (max-width: 768px) {
           .mobile-toggle-btn { display: block; }
 
@@ -106,12 +109,8 @@ function Navbar() {
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
           }
 
-          .nav-actions {
-            gap: 8px;
-          }
-
-          .whatsapp-btn {
-            padding: 7px 14px;
+          .whatsapp-btn-nav {
+            padding: 6px 12px;
             font-size: 12px;
           }
         }
@@ -119,7 +118,6 @@ function Navbar() {
 
       <Logo />
 
-      {/* القائمة الرئيسية */}
       <ul className="nav-links">
         <li><a href="#services" onClick={(e) => scrollTo(e, 'services')} className="nav-link">الخدمات</a></li>
         <li><a href="#features" onClick={(e) => scrollTo(e, 'features')} className="nav-link">المميزات</a></li>
@@ -127,15 +125,14 @@ function Navbar() {
         <li><a href="#contact" onClick={(e) => scrollTo(e, 'contact')} className="nav-link">اتصل بنا</a></li>
       </ul>
 
-      {/* زر الواتساب وزر الهامبرغر للموبايل */}
       <div className="nav-actions">
         <a 
           href="https://wa.me/213663575873" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="whatsapp-btn"
+          className="whatsapp-btn-nav"
         >
-          <FaWhatsapp size={19} />
+          <FaWhatsapp size={16} />
           <span>تواصل معنا</span>
         </a>
 
