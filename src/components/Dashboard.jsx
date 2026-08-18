@@ -608,5 +608,7 @@ function Dashboard({ user, onLogout }) {
 
       </main>
     </div>
-  )
+ )
+ 
 }
+export default Dashboard;
